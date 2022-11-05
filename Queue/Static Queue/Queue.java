@@ -45,4 +45,7 @@ public class Queue {
             return true;
         return false;
     }
+    public int length(){
+      return size;
+    }
 }
