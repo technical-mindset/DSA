@@ -14,12 +14,13 @@ public class Queue {
     }
 
     public void enqueue(int data){
-        if(!(this.isFull())){
-            pos++;
-        this.list.addLast(data);
+        if(this.peek() != -1){
+            System.out.println("Dequeue: "+this.peek());
+            pos--;
+         this.list.removeFirst();
         }
         else {
-            System.out.println("Queue is full, size of queue is "+this.size);
+            System.out.println("Underflow Condition Occur");
         }
     }
 
@@ -47,5 +48,11 @@ public class Queue {
 
     public int length(){
         return this.size;
+    }
+   
+   public int peek(){
+        if (!(this.isEmpty()))
+            return (int) this.list.peekFirst();
+        return -1;
     }
 }
