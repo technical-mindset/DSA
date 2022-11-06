@@ -24,7 +24,7 @@ public class Queue {
 
     public void dequeue(){
         if(!this.isEmpty() && this.head != this.size-1){
-
+           head++;
             System.out.println("Dequeue: "+this.peekFirst());
             this.data[this.head] = -1;
         }
@@ -54,7 +54,6 @@ public class Queue {
 
     public int peekFirst(){
         if ((!this.isEmpty()) && this.head != this.size-1){
-             head++;
              return this.data[head];
         }
         return -1;
