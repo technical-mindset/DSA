@@ -13,4 +13,5 @@ Topics:
     (a) Static Queue (Using Array)
     (b) Dynamic Queue (Using LinkedList)
     (c) Queue (With head and rear)
-    (d) Priority Queue (Descending order)
+    (d) Circular Queue (Using Array)
+    (e) Priority Queue (Descending order)
