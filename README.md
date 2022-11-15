@@ -1,6 +1,8 @@
 # Data Structure And Algorithms (JAVA)
 
 Topics:
+        (a) Data Structures:-
+        
 (1) LinkedList:
     (a) Singly LinkedList
     (b) Doubly LinkedList
@@ -15,3 +17,13 @@ Topics:
     (c) Queue (With head and rear)
     (d) Circular Queue (Using Array)
     (e) Priority Queue (Descending order)
+    
+    
+    
+        (b) Algorithms:-
+
+(1) Linear Search:
+   (a) Iterative method
+  
+(2) Binary Search:
+   (a) Iterative method
