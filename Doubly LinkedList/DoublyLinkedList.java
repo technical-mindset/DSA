@@ -64,6 +64,15 @@ public class DoublyLinkedList {
             node.prev = null;
 
     }
+  
+  public void removeFirst(){
+        Node node = head;
+        Node tempNode = node.next;
+        node.next = node.next.next;
+        tempNode = null;
+        node.next.prev = null;
+    }
+  
     public int size(){
         Node node = head;
         int i = 0;
