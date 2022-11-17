@@ -75,6 +75,12 @@ class LinkedList{
         return i;
     }
     
+    public void removeAtStart(){
+        Node node = this.head;
+         this.head = this.head.next;
+         node.next = null;
+    }
+    
     public void removeLast () {
         Node node = head;
         int j;
