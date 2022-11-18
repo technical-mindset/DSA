@@ -7,6 +7,7 @@ Topics:
 (1) LinkedList:
     (a) Singly LinkedList
     (b) Doubly LinkedList
+    (c) Circular LinkedList(Using Both Patterns)
 
 (2) Stack:
     (a) Static Stack (Using Array)
