@@ -27,35 +27,41 @@ public class CircularLinkedList {
         }
     }
     public void insertAtStart(int data){
-        Node node = this.head;
-        Node new_node = new Node(data);
-        new_node.next = node;
-        head = new_node;
-
+        Node node ,n1;
+        if(this.head == null || this.head.next == this.head){
+            this.insert(data);
+        }
+        else if(this.head.next != this.head){
+            node = n1 = this.head;
+            while(n1.next != this.head){
+                n1 = n1.next;
+            }
+            Node new_node = new Node(data);
+            this.head = new_node;
+            new_node.next = node;
+            n1.next = new_node;
+        }
     }
 
 
     public void insertAt(int pos, int data) {
-        Node new_node = new Node(data);
-        Node node = head;
-//         if position is greater than the size of linked list it prints "Trrelevant Position"
-        if (pos > this.size() + 1) {
-            System.out.println("Irrelevant Position ");
-        } else
-            {
-            // if pos == 1 or 0 then insert item at the beginning
-            if (pos == 1 || pos == 0) {
-                //insertAtStart(data);
+        if(this.head != null && (pos == 0 || pos == 1)){
+            this.insertAtStart(data);
+        }
+        else if(pos > this.size()+1){
+            System.out.println("Operation failed: \"Size of list is:"+this.size+" Please enter correct position");
+        }
+        else {
+            Node node = this.head;
+            int i = 0;
+            //loop stops at pos-1 just before to the targeted position
+            while(i < pos-2){
+                node = node.next;
+                i++;
             }
-            //add new node at required position in the list and current node move from i to i+1 position
-            else {
-                for (int i = 1; i < pos - 1; i++) {
-                    node = node.next;
-                }
-                new_node.next = node.next;
-                node.next = new_node;
-
-            }
+            Node new_node = new Node(data);
+            new_node.next = node.next;
+            node.next = new_node;
         }
     }
     //Node in the head must deleted then next node becomes head
@@ -121,9 +127,11 @@ public class CircularLinkedList {
         }
 
     public void traverse() {
-        Node node = head;
-        if (this.head != null) {
-            while (node.next != this.head) {
+        Node node = this.head;
+        if(this.head == null) System.out.println("Empty List");
+        else if(this.head.next == this.head) System.out.println(this.head.getData());
+        else{
+            while(node.next != this.head){
                 System.out.println(node.getData());
                 node = node.next;
             }
