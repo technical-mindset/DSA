@@ -43,9 +43,11 @@ public class CircularDoubly {
             // store the details of next and prev of old head which is stores in node object into new_node
             new_node.next = node;
             new_node.prev = node.prev;
-            node.prev = new_node;
             // store new_node as 'prev' of 'next' (which means the last node) of head
-            this.head.prev.next = new_node;
+            head.prev.next = new_node;
+            node.prev = new_node;
+
+
         }
     }
     public void insertAt(int pos, int data){
@@ -70,9 +72,9 @@ public class CircularDoubly {
             Nodes new_node = new Nodes(data);
             new_node.next = node.next;
             new_node.prev = node;
-            node.next = new_node;
             // change the 'next' of 'prev' of current 'node' with new_node
             node.next.prev = new_node;
+            node.next = new_node;
         }
     }
 
@@ -139,7 +141,7 @@ public class CircularDoubly {
         return this.size;
     }
 
-    public void traverse(){
+    public void Next_traverse(){
         Nodes node = this.head;
         if(this.head == null) System.out.println("Empty List");
         else if(this.head.next == this.head) System.out.println(this.head.getData());
@@ -151,4 +153,17 @@ public class CircularDoubly {
             System.out.println(node.getData());
         }
     }
+    public void Prev_traverse(){
+        Nodes node = this.head;
+        if(this.head == null) System.out.println("Empty List");
+        else if(this.head.prev == this.head) System.out.println(this.head.getData());
+        else{
+            while(node.prev != this.head){
+                node = node.prev;
+                System.out.println(node.getData());
+            }
+            System.out.println(node.getData());
+        }
+    }
 }
+
