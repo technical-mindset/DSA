@@ -53,7 +53,7 @@ public class CircularDoubly {
           this.insert(data);
         }
         else if(pos == 0 || pos == 1){
-            this.removeAtStart();
+            this.insert(data);
         }
         else if(pos > this.size()+1){
             System.out.println("Operation failed: \"Size of list is:"+this.size+" Please enter correct position");
