@@ -8,6 +8,7 @@ public class CircularLinkedList {
         this.head = null;
         this.size = 0;
     }
+    
     // next node of head point to head when the list is empty
     public void insert(int data) {
         Node new_node = new Node(data);
