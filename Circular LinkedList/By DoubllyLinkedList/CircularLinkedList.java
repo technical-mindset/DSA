@@ -158,11 +158,14 @@ public class CircularDoubly {
         if(this.head == null) System.out.println("Empty List");
         else if(this.head.prev == this.head) System.out.println(this.head.getData());
         else{
+            // it stops runnig when the previous node is head
             while(node.prev != this.head){
+                // first change the node for not start with the head at first iteration
                 node = node.prev;
                 System.out.println(node.getData());
             }
-            System.out.println(node.getData());
+            // For also printing the head node in the last
+            System.out.println(node.prev.getData());
         }
     }
 }
