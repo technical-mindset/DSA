@@ -12,7 +12,7 @@ public class Main {
     }
 
 }
-
+//SinglyLinkedList
 class Node{
     int data;
     Node next;
