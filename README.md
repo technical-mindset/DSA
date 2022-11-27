@@ -21,6 +21,7 @@ Topics:
     (e) Priority Queue (Descending order)
     
 (4) Trees:
+    (a) Binary Tree (Using DoublyLinked)
 
     
         (b) Algorithms:-
