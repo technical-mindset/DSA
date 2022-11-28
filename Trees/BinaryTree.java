@@ -34,6 +34,21 @@ public class BinaryTree {
     
      public void traversal(){
         this.preTraversal(this.root, this.root.left, this.root.right);
+        this.posTraversal(this.root, this.root.left, this.root.right);
+
+    }
+    private void posTraversal(Node root, Node left, Node right) {
+        if(right != null){
+            Node node = root.right;
+            posTraversal(node, node.left, node.right);
+        }
+        if(left != null){
+            Node node = root.left;
+            posTraversal(node, node.left, node.right);
+        }
+        if (root != null){
+            System.out.println(root.getData());
+        }
     }
     
     private void preTraversal(Node root, Node left, Node right) {
