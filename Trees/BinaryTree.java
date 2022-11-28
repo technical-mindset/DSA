@@ -10,12 +10,6 @@ public class BinaryTree {
         if(this.root == null){
             this.root = newNode;
         }
-        else if(this.root.left == null){
-            this.root.left = newNode;
-        }
-        else if(this.root.right == null){
-            this.root.right = newNode;
-        }
         else {
             boolean flag = false;
             Node node = this.root;
