@@ -32,6 +32,24 @@ public class BinaryTree {
         }
     }
     
+     public void traversal(){
+        this.preTraversal(this.root, this.root.left, this.root.right);
+    }
+    
+    private void preTraversal(Node root, Node left, Node right) {
+       if (root != null){
+           System.out.println(root.getData());
+       }
+       if(left != null){
+           Node node = root.left;
+           preTraversal(node, node.left, node.right);
+       }
+        if(right != null){
+            Node node = root.right;
+            preTraversal(node, node.left, node.right);
+        }
+    }
+    
     public void contains(int data){
         if(this.root == null)
             throw new NullPointerException("\" ---- Tree is empty!!!! ---- \"");
