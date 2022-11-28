@@ -31,6 +31,33 @@ public class BinaryTree {
             }
         }
     }
+    
+    public void contains(int data){
+        if(this.root == null)
+            throw new NullPointerException("\" ---- Tree is empty!!!! ---- \"");
+        
+        else {
+            boolean flag = false;
+            Node node = this.root;
+            
+            while(!flag){
+                if(node.getData() == data){
+                    System.out.println(node.getData());
+                    flag = true;
+                }
+                
+               else if (node.getData() > data) {
+                    if (node.left != null) node = node.left;
+                    else flag = true;
+                }
+                
+                else if (node.getData() < data ) {
+                    if (node.right != null) node = node.right;
+                    else flag = true;
+                }
+            }
+        }
+    }
 }
 
 
