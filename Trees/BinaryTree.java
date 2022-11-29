@@ -32,6 +32,23 @@ public class BinaryTree {
         }
     }
     
+    //Finding deepest Node
+    private Node deepNode(Node root, Node left, Node right){
+        Node nodeT = root;
+        if (root != null){
+            nodeT = root;
+        }
+        if(left != null){
+            Node node = root.left;
+            deepNode(node, node.left, node.right);
+        }
+        if(right != null){
+            Node node = root.right;
+            deepNode(node, node.left, node.right);
+        }
+        return nodeT;
+    }
+    
    public void traversal(){ 
         if(this.root == null) throw new NullPointerException("Node is empty");
         else { 
