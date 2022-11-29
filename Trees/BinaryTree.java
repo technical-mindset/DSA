@@ -51,6 +51,22 @@ public class BinaryTree {
         }
     }
     
+    private void inTraversal(Node root, Node left, Node right) {
+        // Left, Root, Right
+        if(left != null){
+            Node node = root.left;
+            inTraversal(node, node.left, node.right);
+        }
+        if (root != null){
+            System.out.println(root.getData());
+        }
+        if(right != null){
+            Node node = root.right;
+            inTraversal(node, node.left, node.right);
+        }
+
+    }
+    
     private void preTraversal(Node root, Node left, Node right) {
        if (root != null){
            System.out.println(root.getData());
