@@ -32,10 +32,12 @@ public class BinaryTree {
         }
     }
     
-     public void traversal(){
-        this.preTraversal(this.root, this.root.left, this.root.right);
-        this.posTraversal(this.root, this.root.left, this.root.right);
-
+   public void traversal(){ 
+        if(this.root == null) throw new NullPointerException("Node is empty");
+        else { 
+            this.preTraversal(this.root, this.root.left, this.root.right);
+            this.posTraversal(this.root, this.root.left, this.root.right);
+            this.inTraversal(this.root, this.root.left, this.root.right); } 
     }
     private void posTraversal(Node root, Node left, Node right) {
         if(right != null){
