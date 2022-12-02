@@ -22,6 +22,7 @@ Topics:
     
 (4) Trees:
     (a) Binary Tree (Using DoublyLinked)
+    (b) Binary Search Tree (Using DoublyLinked)
 
     
         (b) Algorithms:-
