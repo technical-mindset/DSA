@@ -1,0 +1,152 @@
+package DSA.Algorithms.Trees;
+import DSA.Algorithms.Trees.Node;
+public class BInarySearchTree {
+    private Node root;
+    public BST(){
+        this.root = null;
+    }
+
+
+
+    public boolean isBST(){
+        return check_BST(this.root, this.root.left, this.root.right);
+    }
+
+
+    private boolean check_BST(Node root, Node left, Node right) {
+         boolean bool = false;
+
+         if(root != null){
+
+             if (left != null){
+                 check_BST(root.left, root.left.left, root.right.right);
+
+                 if (root.left.getData() < root.getData()) bool = true;
+                 else bool = false;
+             }
+
+             if (right != null) {
+                 check_BST(root.right, root.right.left, root.right.right);
+
+                 if (root.right.getData() > root.getData()) bool = true;
+                 else bool = false;
+             }
+         }
+         return bool;
+    }
+
+
+
+
+
+
+    private void posTraversal(Node root, Node left, Node right) {
+        // Left, Right, Root
+        if(left != null){
+            Node node = root.left;
+            posTraversal(node, node.left, node.right);
+        }
+        if(right != null){
+            Node node = root.right;
+            posTraversal(node, node.left, node.right);
+        }
+        if (root != null){
+            System.out.println(root.getData());
+        }
+    }
+    
+        private void inTraversal(Node root, Node left, Node right) {
+            // Left, Root, Right
+            if(left != null){
+                Node node = root.left;
+                inTraversal(node, node.left, node.right);
+            }
+            if (root != null){
+                System.out.println(root.getData());
+
+            }
+            if(right != null){
+                Node node = root.right;
+                inTraversal(node, node.left, node.right);
+            }
+
+        }
+        
+        private void preTraversal(Node root, Node left, Node right) {
+            // Root, Right, left
+            if (root != null){
+                System.out.println(root.getData());
+            }
+            if(left != null){
+                Node node = root.left;
+                preTraversal(node, node.left, node.right);
+            }
+            if(right != null){
+                Node node = root.right;
+                preTraversal(node, node.left, node.right);
+            }
+        }
+        
+        // Searching a particular data in Binary Search Tree
+        public boolean contains(int data){
+            boolean bool = false;
+            if(this.root == null) {
+                throw new NullPointerException("\" ---- Tree is empty!!!! ---- \"");
+            }
+            else {
+                boolean flag = false;
+                Node node = this.root;
+                while(!flag){
+                    if(node.getData() == data){
+                        bool = true;
+                        flag = true;
+                    }
+                    else if (node.getData() > data) {
+                        if (node.left != null) node = node.left;
+                        else flag = true;
+                    }
+                    else if (node.getData() < data ) {
+                        if (node.right != null) node = node.right;
+                        else flag = true;
+                    }
+                }
+            }
+            return bool;
+        }
+        public void add(int data){
+            Node newNode = new Node(data);
+            if(this.root == null){
+                this.root = newNode;
+            }
+            else {
+                boolean flag = false;
+                Node node = this.root;
+                while(!flag){
+                    if (node.getData() > data) {
+                        if (node.left != null) node = node.left;
+                        else flag = true;
+                    }
+                    else if (node.getData() < data ) {
+                        if (node.right != null) node = node.right;
+                        else flag = true;
+                    }
+                    else if(node.getData() == data) flag = true;
+
+                }
+                if (node.getData() > data) {
+                    node.left = newNode;
+                }
+                else if (node.getData() < data) {
+                    node.right = newNode;
+                }
+            }
+        }
+        public void traversal(){
+            if(this.root == null) throw new NullPointerException("Node is empty");
+            else {
+//                this.preTraversal(this.root, this.root.left, this.root.right);
+//                this.posTraversal(this.root, this.root.left, this.root.right);
+                this.inTraversal(this.root, this.root.left, this.root.right);
+            }
+        }
+    }
