@@ -1,18 +1,18 @@
 package DSA.Algorithms.Trees;
 import DSA.Algorithms.Trees.Node;
-public class BInarySearchTree {
+
+public class BST {
     private Node root;
+    
     public BST(){
         this.root = null;
     }
-
-
 
     public boolean isBST(){
         return check_BST(this.root, this.root.left, this.root.right);
     }
 
-
+    // its check whether the is Binary Search Tree or not
     private boolean check_BST(Node root, Node left, Node right) {
          boolean bool = false;
 
@@ -86,8 +86,33 @@ public class BInarySearchTree {
                 preTraversal(node, node.left, node.right);
             }
         }
-        
-        // Searching a particular data in Binary Search Tree
+
+
+        //Searching a particular data in Binary Search Tree (Through recursive method)
+        public boolean contain(int data){
+            return search(data, this.root);
+        }
+      private static boolean search(int data, Node root){
+        boolean bool  = false;
+        if(root != null){
+            if(root.getData() == data){
+                bool = true;
+            }
+            else if(root.getData() < data){
+                bool = search(data, root.right);
+
+            }
+            else {
+                bool = search(data, root.left);
+            }
+
+        }
+        return bool;
+    }
+
+
+
+        // Searching a particular data in Binary Search Tree (Through iterative method)
         public boolean contains(int data){
             boolean bool = false;
             if(this.root == null) {
