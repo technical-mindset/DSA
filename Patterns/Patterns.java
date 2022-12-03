@@ -3,9 +3,11 @@ package DSA.Algorithms.Patterns;
 public class Patterns {
 
     /* Pattern 1
+    
         *****
         *****
         *****
+        
     */
 
     public static void pattern1(int n){
@@ -91,3 +93,31 @@ public class Patterns {
     }
 
 }
+
+/* Pattern 5
+
+         *
+        **
+       ***
+      ****
+     *****
+
+     */
+
+    public static void pattern5(int n){
+        // for how many rows
+        for (int row = 0; row < n; row++) {
+            // for how many columns in each rows
+            int i = n - row;
+            for (int col = 0; col <= n; col++) {
+                if(i > col){
+                   System.out.print(" ");
+               }
+               else {
+                   System.out.print("*");
+               }
+            }
+
+            System.out.println();
+        }
+    }
