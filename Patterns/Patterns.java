@@ -121,3 +121,32 @@ public class Patterns {
             System.out.println();
         }
     }
+
+
+    /* Pattern 6
+
+     *****
+     ****
+     **
+     *
+
+     */
+
+    public static void pattern6(int n){
+        // for how many rows
+        for (int row = 0; row < n; row++) {
+            // for how many columns in each rows
+            int totalStars = n - row;
+            for (int col = 0; col <= n; col++) {
+                if(totalStars > col){
+                    System.out.print("*");
+                }
+                else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+    }
+
+
