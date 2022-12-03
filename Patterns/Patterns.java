@@ -243,6 +243,38 @@ public class Patterns {
     }
 
 
+    /* Pattern 10
+
+     * * * * *
+      * * * *
+        * *
+         *
+
+     */
+
+    public static void pattern10(int n){
+        // for how many rows
+        for (int row = 0; row <= n; row++) {
+
+            // for how many spaces in each rows
+            for (int space = 1; space <= row; space++) {
+                System.out.print(" ");
+            }
+
+            // for how many stars in each rows
+            for (int col = 0; col <= n-row; col++) {
+                    System.out.print("* ");
+            }
+
+            System.out.println();
+        }
+    }
+
+
+
+
+
+
 
 
 
