@@ -141,9 +141,6 @@ public class Patterns {
                 if(totalStars > col){
                     System.out.print("*");
                 }
-                else {
-                    System.out.print(" ");
-                }
             }
             System.out.println();
         }
