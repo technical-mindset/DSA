@@ -214,6 +214,37 @@ public class Patterns {
     }
 
 
+    /* Pattern 9
+
+         *
+        * *
+       * * *
+      * * * *
+     * * * * *
+
+     */
+
+    public static void pattern9(int n){
+        // for how many rows
+        for (int row = 0; row <= n; row++) {
+            // for how many columns in each rows
+            int totalSpaces = n - row;
+            for (int col = 0; col <= n; col++) {
+                if(totalSpaces > col){
+                    System.out.print(" ");
+                }
+                else {
+                    System.out.print("* ");
+                }
+            }
+
+            System.out.println();
+        }
+    }
+
+
+
+
 
 
 
