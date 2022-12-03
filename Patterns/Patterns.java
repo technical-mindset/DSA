@@ -147,3 +147,42 @@ public class Patterns {
     }
 
 
+    /* Pattern 7
+
+        *
+       ***
+      *****
+     *******
+    *********
+
+     */
+
+    public static void pattern7(int n){
+        // for total stars in each rows
+        int totalStars = 1;
+        
+        // for how many rows
+        for (int row = 0; row < n; row++) {
+        
+            // for how many spaces in each rows
+            int totalSpaces = n - row;
+            
+            // Column spaces
+            for (int colSpace = 0; colSpace < totalSpaces; colSpace++) {
+                System.out.print(" ");
+            }
+            // Column starts
+            for (int col = 0; col < totalStars; col++) {
+                System.out.print("*");
+            }
+            totalStars=totalStars+2;
+            System.out.println();
+        }
+    }
+
+
+
+
+
+
+
