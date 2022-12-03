@@ -183,6 +183,41 @@ public class Patterns {
 
 
 
+    /* Pattern 8
+
+     *********
+      *******
+       *****
+        ***
+         *
+
+     */
+
+    public static void pattern8(int n){
+        // for total stars in each rows
+        int totalStars = (2*n)-1;
+
+        // for how many rows
+        for (int row = 0; row < n; row++) {
+
+            // for how many spaces in each rows
+            for (int colSpace = 0; colSpace < row; colSpace++) {
+                System.out.print(" ");
+            }
+            // Column starts
+            for (int col = 0; col < totalStars; col++) {
+                System.out.print("*");
+            }
+            totalStars=totalStars-2;
+            System.out.println();
+        }
+    }
+
+
+
+
+
+
 
 
 
