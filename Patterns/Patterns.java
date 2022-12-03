@@ -60,5 +60,34 @@ public class Patterns {
             System.out.println();
         }
     }
+    
+    
+    /* Pattern 4
+
+     *
+     **
+     ***
+     ****
+     *****
+     ****
+     ***
+     **
+     *
+
+     */
+
+    public static void pattern4(int n){
+        // for how many rows
+        for (int row = 0; row < (2*n); row++) {
+            // for how many columns in each rows (total - row)
+            int totalColInRow = (row > n ? (2*n) - row : row);
+            
+            for (int col = 0; col < totalColInRow; col++) {
+                System.out.print("* ");
+
+            }
+            System.out.println();
+        }
+    }
 
 }
