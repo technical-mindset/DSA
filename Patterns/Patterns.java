@@ -20,7 +20,7 @@ public class Patterns {
             System.out.println();
         }
     }
-
+    
 
     /* Pattern 2
     
