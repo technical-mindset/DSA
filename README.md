@@ -43,3 +43,15 @@ Topics:
 (3) Selection Sort
 (4) Merge Sort
 
+
+       (c) Patterns:- 
+       
+(1) All star patterns.
+(2) All number patterns.
+
+
+
+      (d) Other Topics Of Java:-
+       
+(1) Fibonacci Series (Iterative).
+(2) Factorial.
