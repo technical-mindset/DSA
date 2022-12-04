@@ -361,6 +361,50 @@ public class Patterns {
 
 
 
+    /* Pattern 13
+
+     *
+     ***********
+      *       *
+       *     *
+        *   *
+         * *
+          *
+     */
+
+    public static void pattern13(int n){
+        // for stars and between spaces
+        int totalStars = (2*n)-2;
+
+        for (int row = 0; row < n; row++) {
+
+            // for space before stars
+            for (int spaces = 0; spaces < (row); spaces++) {
+                System.out.print(" ");
+            }
+            // for stars and spaces between the stars in each row at particular column
+            for (int col = 0; col <= totalStars; col++) {
+
+                // col == 0 || col == totalStars for all the stars with spaces and row == n-1 for last line of stars
+                if (col == 0 || col == totalStars || row == 0){
+                    System.out.print("*");
+                }
+                else{
+                    System.out.print(" ");
+                }
+            }
+            totalStars = totalStars - 2;
+            System.out.println();
+
+        }
+    }
+
+
+
+
+
+
+
 
 
 
