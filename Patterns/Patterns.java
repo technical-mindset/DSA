@@ -313,6 +313,7 @@ public class Patterns {
                 }
                 lastStars = lastStars +2;
             }
+            
             System.out.println();
         }
     }
