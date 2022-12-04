@@ -272,6 +272,57 @@ public class Patterns {
 
 
 
+    /* Pattern 11
+
+     *******
+      *****
+       ***
+        *
+        *
+       ***
+      *****
+     *******
+
+     */
+
+    public static void pattern11(int n){
+        int firstStars = (2*n)-1;
+        int lastStars = 1;
+
+        // for how many rows
+        for (int row = 0; row < (2*n)-1; row++) {
+
+            // for how many spaces in each rows
+            int totalSpaces = (row < n ? row : (2*n-1) - row);
+            
+            for (int colSpace = 0; colSpace < totalSpaces; colSpace++) {
+                System.out.print(" ");
+            }
+
+            // Column stars for first peramid
+            for (int col = 0; col < firstStars; col++) {
+                System.out.print("*");
+            }
+            firstStars = firstStars - 2;
+
+            if (firstStars < -1) {
+
+                // Column stars for last peramid
+                for (int col = 0; col < lastStars; col++) {
+                    System.out.print("*");
+                }
+                lastStars = lastStars +2;
+            }
+            System.out.println();
+        }
+    }
+
+
+
+
+
+
+
 
 
 
