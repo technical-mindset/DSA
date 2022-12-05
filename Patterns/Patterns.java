@@ -393,11 +393,59 @@ public class Patterns {
                     System.out.print(" ");
                 }
             }
+            
             totalStars = totalStars - 2;
             System.out.println();
 
         }
     }
+
+
+
+    /* Pattern 14
+
+         *
+        * *
+       *   *
+      *     *
+     *       *
+      *     *
+       *   *
+        * *
+         *
+
+     */
+
+    public static void pattern14(int n){
+        int totalCol = 0;
+
+        // for how many rows
+        for (int row = 0; row < n; row++) {
+
+            // for total spaces from corner to before the star's
+            int totalSpaces = (n/2 >= row ? (n/2)-row  : row-(n/2));
+            // print spaces in each row
+            for (int spaces = 0; spaces < totalSpaces ; spaces++) {
+                System.out.print(" ");
+            }
+              // for how many columns in each row  ( loop run in odd positions)
+            for (int col = 0; col <= totalCol ; col++){
+                //  print star when loop starts and in the last iteration
+                if (col == 0 || col == totalCol) {
+                    System.out.print("*");
+                }
+                else {
+                    System.out.print(" ");
+                }
+            }
+                // increasing in top to mid and decreasing mid to bottom
+                totalCol = (n/2 > row ? totalCol +2 : totalCol - 2);
+                System.out.println();
+
+        }
+    }
+
+
 
 
 
