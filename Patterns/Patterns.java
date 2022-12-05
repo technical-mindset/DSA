@@ -513,6 +513,51 @@ public class Patterns {
 
 
 
+    /* Pattern 17
+
+         *
+        * *
+       * * *
+      * * * *
+     * * * * *
+      * * * *
+       * * *
+        * *
+         *
+
+     */
+
+    public static void pattern17(int n){
+        int totalCol = 0;
+
+        // for how many rows
+        for (int row = 0; row < ( n % 2 == 0 ? n+1 : n); row++) {
+
+            // for total spaces from corner to before the star's
+            int totalSpaces = (n/2 >= row ? (n/2)-row  : row-(n/2));
+            // print spaces in each row
+            for (int spaces = 0; spaces < totalSpaces ; spaces++) {
+                System.out.print(" ");
+            }
+            // for how many columns in each row  
+            for (int col = 0; col <= totalCol ; col++){
+                  System.out.print("* ");
+
+            }
+            // increasing in top to mid and decreasing mid to bottom
+            totalCol = (n/2 > row ? totalCol + 1 : totalCol - 1);
+            System.out.println();
+
+        }
+    }
+
+
+
+
+
+
+
+
 
 
 
