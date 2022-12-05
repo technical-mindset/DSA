@@ -552,6 +552,57 @@ public class Patterns {
     }
 
 
+    /* Pattern 18
+
+     *********
+     **** ****
+     ***   ***
+     **     **
+     *       *
+     **     **
+     ***   ***
+     **** ****
+     *********
+
+
+
+     */
+
+    public static void pattern18(int n){
+        // for how many row (for even number have n+1 rows and odd have n )
+       int forRow = (n % 2 == 0 ? n+1 : n);
+       
+       // space split into 2 parts right and left respectively which contains n/2
+       int rightColSpace = (n/2);
+       int leftColSpace = (n/2);
+
+        for (int rows = 0; rows <= forRow; rows++) {
+              
+            // there are n columns in each row
+            for (int col = 0; col < n; col++) {
+                
+                if (rows == 0 || rows == forRow){
+                    System.out.print('*');
+                   }
+                // define range to put spaces from leftColSpace value to rightColSpace value
+                else if(col >= leftColSpace && col <= rightColSpace){
+                    System.out.print(' ');
+                }
+                else {
+                    System.out.print('*');
+                }
+            }
+            // for calculate the position for space it starts from row+1 to row-1
+            // ( nested condition for deciding the whether it would be inc. or dec. in both spaces)
+            rightColSpace = (rows > 1 ? (rows >= n/2+1 ? rightColSpace-1 : rightColSpace+1) : rightColSpace);
+            leftColSpace = (rows > 1 ? (rows >= n/2+1 ? leftColSpace+1 : leftColSpace-1) : leftColSpace);
+            
+            System.out.println();
+        }
+    }
+
+
+
 
 
 
