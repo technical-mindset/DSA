@@ -420,7 +420,7 @@ public class Patterns {
         int totalCol = 0;
 
         // for how many rows
-        for (int row = 0; row < n; row++) {
+        for (int row = 0; row < ( n % 2 == 0 ? n+1 : n); row++) {
 
             // for total spaces from corner to before the star's
             int totalSpaces = (n/2 >= row ? (n/2)-row  : row-(n/2));
