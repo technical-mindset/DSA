@@ -476,26 +476,39 @@ public class Patterns {
     }
 
 
+    /* Pattern 16
 
+          *****
+         *   *
+        *   *
+       *   *
+      *****
 
+     */
 
+    public static void pattern16(int n){
+        // if 'n' is even then forRow set to 'n' otherwise set to 'n-1'
+        int forRow = (n % 2 == 0 ? n : n-1);
+        for (int rows = 0; rows <= n; rows++) {
 
+            // for spaces starting from corner
+            for (int space = 0; space < n-rows; space++) {
+                System.out.print(" ");
+            }
 
+            for (int col = 0; col < n; col++) {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                // forRow is for last line of stars
+                if (rows == 0 || rows == forRow || col == 0 || col == n-1) {
+                    System.out.print("*");
+                }
+                else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+    }
 
 
 
