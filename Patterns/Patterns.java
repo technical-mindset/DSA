@@ -782,6 +782,57 @@ public class Patterns {
 
 
 
+    /* Pattern 25
+
+            1 
+          2 1 2
+        3 2 1 2 3 
+      4 3 2 1 2 3 4 
+        3 2 1 2 3
+          2 1 2 
+            1
+
+     */
+
+    public static void pattern25(int n){
+        // total columns spaces before the numbers
+        // starts with 'n' because numbers have spaces between them
+        int colSpaces = n;
+        
+        // total numbers print in each columnsR 
+        int totalCol = 1;
+
+        int printNum = 1;
+        for (int row = 0; row < (n%2 == 0 ? n+1 :n); row++) {
+
+            for (int space = 0; space < colSpaces ; space++) {
+                System.out.print(' ');
+            }
+
+            for (int col = 0; col < totalCol; col++) {
+                System.out.print(printNum + " ");
+                
+                // inc. and dec. in each column
+                printNum = (totalCol / 2 <= col ? printNum + 1 : printNum - 1);
+            }
+
+             // col spaces inc. & dec. by 2 while totalCol start with 1 so
+            // it inc. & dec. by 2 for keep the elements in each row will be odd sequence
+            colSpaces = (row < (n/2) ? colSpaces - 2 : colSpaces + 2);
+            totalCol = (row < n/2 ? totalCol + 2 : totalCol - 2);
+            
+            // after row > n/2 dec. in number in each row 
+            printNum = (row >= n/2 ? printNum - 2: printNum);
+            
+            System.out.println();
+        }
+    }
+
+
+
+
+
+
 
 
 
