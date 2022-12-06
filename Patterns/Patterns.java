@@ -601,6 +601,52 @@ public class Patterns {
         }
     }
 
+    /* Pattern 19
+
+       *        *
+       **      **
+       ***    ***
+       ****  ****
+       **********
+       ****  ****
+       ***    ***
+       **      **
+       *        *
+
+     */
+
+    public static void pattern19(int n){
+        // for how many row (for even number have n rows and odd have n-1 )
+        int forRow = (n % 2 == 0 ? n : n-1);
+
+        // space split into 2 parts right and left respectively
+        // from 'n' to n/2
+        int rightColSpace = n;
+
+        // from 1 to n/2
+        int leftColSpace = 1;
+
+        for (int rows = 0; rows <= forRow; rows++) {
+            for (int col = 0; col <= n; col++) {
+
+                // from left column space to right column space
+                if (col >= leftColSpace && col < rightColSpace) {
+                    System.out.print(' ');
+                }
+                else {
+                    System.out.print('*');
+                }
+            }
+
+            // for calculating the position for space (after row == n/2 left space dec. and right space inc.)
+            leftColSpace = (rows < (n/2) ? leftColSpace + 1 : leftColSpace - 1);
+            rightColSpace = (rows < (n/2) ? rightColSpace - 1 : rightColSpace + 1);
+            System.out.println();
+        }
+    }
+
+
+
 
 
 
