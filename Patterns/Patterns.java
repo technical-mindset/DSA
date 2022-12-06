@@ -725,10 +725,62 @@ public class Patterns {
                     }
                 }
             }
+            
             colSpaces = colSpaces - 2;
             System.out.println();
         }
     }
+
+
+
+
+    /* Pattern 24
+
+         1
+        212
+       32123
+      4321234
+       32123
+        212
+         1
+
+     */
+
+    public static void pattern24(int n){
+        // total columns spaces before the numbers
+        int colSpaces = n/2;
+        
+        // total numbers print in each columnsR 
+        int totalCol = 1;
+        
+        int printNum = 1;
+        for (int row = 0; row < (n%2 == 0 ? n+1 :n); row++) {
+
+            for (int space = 0; space < colSpaces ; space++) {
+                System.out.print(' ');
+            }
+
+            for (int col = 0; col < totalCol; col++) {
+                System.out.print(printNum);
+                
+                // inc. and dec. in each column
+                printNum = (totalCol / 2 <= col ? printNum + 1 : printNum - 1);
+            }
+
+             // col spaces inc. & dec. by 1 while totalCol start with 1 so
+            // it inc. & dec. by 2 for keep the elements in each row will be odd sequence
+            colSpaces = (row < n/2 ? colSpaces - 1 : colSpaces + 1);
+            totalCol = (row < n/2 ? totalCol + 2 : totalCol - 2);
+            
+            // after row > n/2 dec. in number in each row 
+            printNum = (row >= n/2 ? printNum - 2: printNum);
+            
+            System.out.println();
+        }
+    }
+
+
+
 
 
 
