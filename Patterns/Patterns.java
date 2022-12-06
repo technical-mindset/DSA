@@ -695,6 +695,45 @@ public class Patterns {
     }
 
 
+    /* Pattern 22
+
+             1
+           1   2   
+         1   2   3   
+       1   2   3   4   
+     1   2   3   4   5   
+       
+     */
+
+    public static void pattern23(int n){
+        // total columns spaces before the numbers
+        int colSpaces = (2*n)-2;
+        for (int row = 0; row < n; row++) {
+            
+            for (int space = 0; space < colSpaces ; space++) {
+                System.out.print(' ');
+            }
+            
+            for (int col = 0; col <= row; col++) {
+                System.out.print((col+1));
+            
+                // column spaces after numbers
+                for (int colSpace = 0; colSpace < 3; colSpace++) {
+                    
+                    if (row != 0) {
+                        System.out.print(" ");
+                    }
+                }
+            }
+            colSpaces = colSpaces - 2;
+            System.out.println();
+        }
+    }
+
+
+
+
+
 
 
 
