@@ -864,11 +864,45 @@ public class Patterns {
     }
 
 
+    /* Pattern 26
 
+      1 2 3 4  20 19 18 17
+        5 6 7  16 15 14
+          8 9  13 12
+            10 11
 
+     */
 
-
-
+    public static void pattern26(int n){
+        int totalSpace, totalELem, numStart, numEnd, print;
+        totalSpace = 0; totalELem = (n*2); numStart = 1; numEnd = n*5;
+        
+        for (int row = 0; row < n; row++) {
+            for (int space = 0; space < totalSpace ; space++) {
+                System.out.print(' ');
+            }
+            for (int col = 0; col < totalELem; col++) { 
+                print = (col < totalELem/2 ? numStart : numEnd);
+                System.out.print(print + " ");
+                
+                if (col < totalELem/2 ) {
+                       numStart++;
+                }
+                else {
+                    numEnd--;
+                }
+                
+                if (row != n-1 && totalELem / 2 == col + 1) {
+                    System.out.print(' ');
+                }
+            }
+            
+            totalELem = totalELem - 2;
+            totalSpace = totalSpace +2;
+            
+            System.out.println();
+        }
+    }
 
 
 
