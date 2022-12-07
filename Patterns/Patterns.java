@@ -906,5 +906,49 @@ public class Patterns {
 
 
 
+    /* Pattern 27
+
+       *      *
+       **    **
+       ***  ***
+       ********
+
+     */
+
+    public static void pattern27(int n){
+        int startNum, endNum, startSpace, endSpace;
+        startNum = 0; startSpace = 0; endSpace = (n * 2) - 1; endNum = n*2 - 1;
+
+        for (int row = 0; row <= n; row++) {
+            for (int col = 0; col <= (n * 2) ; col++) {
+
+                if (col > startSpace && col <= endSpace){
+                    System.out.print(' ');
+
+                }
+                else {
+                    startNum++;
+//                   int s = (col <= startSpace ? startNum : (col >= startSpace ? endNum - 1: endNum));
+                   System.out.print("*");
+
+
+                }
+
+            }
+
+//            startNum = 0;
+//            endNum = row+1;
+            startSpace = startSpace + 1;
+            endSpace = endSpace - 1;
+            System.out.println();
+
+        }
+    }
+
+
+
+
+
+
 
 
