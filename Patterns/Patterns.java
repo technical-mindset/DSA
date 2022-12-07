@@ -972,9 +972,51 @@ public class Patterns {
 
                 System.out.print(printNum + " ");
             }
+            
             System.out.println();
         }
     }
+
+
+    /* Pattern 29
+
+       1             1
+       1 2         2 1 
+       1 2 3     3 2 1
+       1 2 3 4 4 3 2 1
+
+     */
+
+    public static void pattern29(int n){
+        int startSpace, endSpace, totalNum = n * 2 - 1;
+        startSpace = 0; endSpace = (n * 2) - 1;
+
+        for (int row = 0; row <= n - 1; row++) {
+            for (int col = 0; col < (n * 2) ; col++) {
+
+                if (col > startSpace && col < endSpace){
+                    System.out.print(' ');
+
+                }
+                else { 
+                    // find the min number for particular position
+                    // from right=(totalNum-col), left=col, top=row, bottom=(totalNum-row) and then add 1
+                  int printNum = (Math.min(Math.min(row, col), Math.min(totalNum - row, totalNum - col)) + 1);
+                   System.out.print(printNum);
+
+
+                }
+
+            }
+            // space variables for right and left space
+            startSpace = startSpace + 1;
+            endSpace = endSpace - 1;
+            System.out.println();
+
+        }
+    }
+
+
 
 
 
