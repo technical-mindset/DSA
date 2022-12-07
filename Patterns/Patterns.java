@@ -734,7 +734,7 @@ public class Patterns {
 
 
 
-    /* Pattern 24
+    /* Pattern 23
 
          1
         212
@@ -746,7 +746,7 @@ public class Patterns {
 
      */
 
-    public static void pattern24(int n){
+    public static void pattern23(int n){
         // total columns spaces before the numbers
         int colSpaces = n/2;
         
@@ -782,7 +782,7 @@ public class Patterns {
 
 
 
-    /* Pattern 25
+    /* Pattern 24
 
             1 
           2 1 2
@@ -794,7 +794,7 @@ public class Patterns {
 
      */
 
-    public static void pattern25(int n){
+    public static void pattern24(int n){
         // total columns spaces before the numbers
         // starts with 'n' because numbers have spaces between them
         int colSpaces = n;
@@ -829,18 +829,39 @@ public class Patterns {
     }
 
 
+    /* Pattern 25
+
+     1
+     0 1
+     1 0 1
+     0 1 0 1
+     1 0 1 0 1
+     0 1 0 1 0 1
+     1 0 1 0 1 0 1
+     0 1 0 1 0 1 0 1
 
 
+     */
 
+    public static void pattern25(int n){
+        // for how many rows
+        int biNum = 1;
+        for (int row = 0; row < n; row++) {
+            // for how many columns in each rows
+            for (int col = 0; col <= row ; col++) {
 
+                System.out.print(biNum + " ");
 
+                // for changing the value
+                biNum = (biNum == 1 ? 0 : 1);
 
-
-
-
-
-
-
+            }
+            // in each odd row start with '1' and even rows start with '0'
+            // every odd row (row starts with '0' to 'n-1')
+            biNum = (row % 2 != 0 ? 1 : 0);
+            System.out.println();
+        }
+    }
 
 
 
