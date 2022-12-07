@@ -947,6 +947,39 @@ public class Patterns {
 
 
 
+    /* Pattern 28
+
+         4 4 4 4 4 4 4
+         4 3 3 3 3 3 4
+         4 3 2 2 2 3 4
+         4 3 2 1 2 3 4
+         4 3 2 2 2 3 4
+         4 3 3 3 3 3 4
+         4 4 4 4 4 4 4
+
+     */
+
+    public static void pattern28(int n){
+        int totalN = (n <= 4 ? n : n * 2);
+
+        for (int row = 0; row <= totalN; row++) {
+            for (int col = 0; col <= totalN; col++) {
+
+                int printNum = (
+                        n <= 4 ?
+                        Math.max(Math.max(row, col), Math.max(totalN-row, totalN-col)) - 1:
+                        Math.max(Math.max(row, col), Math.max(totalN-row, totalN-col)) - n);
+
+                System.out.print(printNum + " ");
+            }
+            System.out.println();
+        }
+    }
+
+
+
+
+
 
 
 
