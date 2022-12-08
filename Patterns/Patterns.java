@@ -1079,3 +1079,39 @@ public class Patterns {
 
 
 
+    /* Pattern 32
+
+       a
+       B c
+       D e F
+       g H i J
+       k L m N o
+
+
+     */
+
+    public static void pattern32(int n){
+        char [] letterArr = {'A', 'B', 'C', 'D', 'E', 'F', 'G' ,'H', 'I', 'J', 'K', 'L' ,'M',
+                'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
+        
+        char letterNum = letterArr[0];
+        int index = 0;
+
+        for (int row = 0; row < n; row++) {
+
+            for (int col = 0; col <= row; col++) {
+                
+                // for converting every next character upper or lower
+                letterNum = (Character.isUpperCase(letterNum) ?
+                        Character.toLowerCase(letterArr[index++]) :
+                        Character.toUpperCase(letterArr[index++]));
+
+                System.out.print(letterNum + " ");
+            }
+            System.out.println();
+        }
+    }
+
+
+
+
