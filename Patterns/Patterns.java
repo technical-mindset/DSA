@@ -1048,14 +1048,34 @@ public class Patterns {
 
 
 
+    /* Pattern 31
+
+       E
+       D E
+       C D E
+       B C D E
+       A B C D E
 
 
+     */
 
-
-
-
-
-
+    public static void pattern31(int n){
+        char [] letterArr = {'A', 'B', 'C', 'D', 'E', 'F', 'G' ,'H', 'I', 'J', 'K', 'L' ,'M',
+                'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
+        int letterNum = n;
+        
+        for (int row = 0; row < n; row++) {
+        
+         int temp = letterNum - 1;
+        
+            for (int col = 0; col <= row; col++) {
+                System.out.print(letterArr[temp++] + " ");
+            }
+            
+            letterNum--;
+            System.out.println();
+        }
+    }
 
 
 
