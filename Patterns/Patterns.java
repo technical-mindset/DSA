@@ -695,7 +695,7 @@ public class Patterns {
     }
 
 
-    /* Pattern 22
+    /* Pattern 23
 
              1
            1   2   
@@ -734,7 +734,7 @@ public class Patterns {
 
 
 
-    /* Pattern 23
+    /* Pattern 24
 
          1
         212
@@ -746,7 +746,7 @@ public class Patterns {
 
      */
 
-    public static void pattern23(int n){
+    public static void pattern24(int n){
         // total columns spaces before the numbers
         int colSpaces = n/2;
         
@@ -782,7 +782,7 @@ public class Patterns {
 
 
 
-    /* Pattern 24
+    /* Pattern 25
 
             1 
           2 1 2
@@ -794,7 +794,7 @@ public class Patterns {
 
      */
 
-    public static void pattern24(int n){
+    public static void pattern25(int n){
         // total columns spaces before the numbers
         // starts with 'n' because numbers have spaces between them
         int colSpaces = n;
@@ -829,7 +829,7 @@ public class Patterns {
     }
 
 
-    /* Pattern 25
+    /* Pattern 26
 
      1
      0 1
@@ -843,7 +843,7 @@ public class Patterns {
 
      */
 
-    public static void pattern25(int n){
+    public static void pattern26(int n){
         // for how many rows
         int biNum = 1;
         for (int row = 0; row < n; row++) {
@@ -864,7 +864,7 @@ public class Patterns {
     }
 
 
-    /* Pattern 26
+    /* Pattern 27
 
       1 2 3 4  20 19 18 17
         5 6 7  16 15 14
@@ -873,7 +873,7 @@ public class Patterns {
 
      */
 
-    public static void pattern26(int n){
+    public static void pattern27(int n){
         int totalSpace, totalELem, numStart, numEnd, print;
         totalSpace = 0; totalELem = (n*2); numStart = 1; numEnd = n*5;
         
@@ -906,7 +906,7 @@ public class Patterns {
 
 
 
-    /* Pattern 27
+    /* Pattern 28
 
        *      *
        **    **
@@ -915,7 +915,7 @@ public class Patterns {
 
      */
 
-    public static void pattern27(int n){
+    public static void pattern28(int n){
         int startNum, endNum, startSpace, endSpace;
         startNum = 0; startSpace = 0; endSpace = (n * 2) - 1; endNum = n*2 - 1;
 
@@ -947,7 +947,7 @@ public class Patterns {
 
 
 
-    /* Pattern 28
+    /* Pattern 29
 
          4 4 4 4 4 4 4
          4 3 3 3 3 3 4
@@ -959,7 +959,7 @@ public class Patterns {
 
      */
 
-    public static void pattern28(int n){
+    public static void pattern29(int n){
         int totalN = (n <= 4 ? n : n * 2);
 
         for (int row = 0; row <= totalN; row++) {
@@ -1022,7 +1022,7 @@ public class Patterns {
 
 
 
-    /* Pattern 29
+    /* Pattern 30
 
        E
        D E
@@ -1033,7 +1033,7 @@ public class Patterns {
 
      */
 
-    public static void pattern29(int n){
+    public static void pattern30(int n){
         char [] letterArr = {'A', 'B', 'C', 'D', 'E', 'F', 'G' ,'H', 'I', 'J', 'K', 'L' ,'M',
                            'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
         for (int row = 0; row < n; row++) {
