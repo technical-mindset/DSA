@@ -17,6 +17,7 @@ public class Patterns {
             for (int col = 0; col < n; col++) {
                 System.out.print("*");
             }
+            
             System.out.println();
         }
     }
@@ -1108,9 +1109,40 @@ public class Patterns {
 
                 System.out.print(letterNum + " ");
             }
+            
             System.out.println();
         }
     }
+
+
+    /* Pattern 33
+
+       E D C B A
+       D C B A
+       C B A
+       B A
+       A
+
+     */
+
+    public static void pattern33(int n){
+        char [] letterArr = {'A', 'B', 'C', 'D', 'E', 'F', 'G' ,'H', 'I', 'J', 'K', 'L' ,'M',
+                             'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
+
+        int index = n - 1;
+
+        for (int row = 0; row < n; row++) {
+            int i = index;
+            
+            for (int col = 0; col < n - row; col++) {
+                System.out.print(letterArr[i--] + " ");
+            }
+            
+            index--;
+            System.out.println();
+        }
+    }
+
 
 
 
