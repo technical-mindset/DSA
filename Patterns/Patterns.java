@@ -964,8 +964,9 @@ public class Patterns {
 
         for (int row = 0; row <= totalN; row++) {
             for (int col = 0; col <= totalN; col++) {
-
-                int printNum = (
+                
+                // for finding the number at particular position
+                int printNum = ( 
                         n <= 4 ?
                         Math.max(Math.max(row, col), Math.max(totalN-row, totalN-col)) - 1:
                         Math.max(Math.max(row, col), Math.max(totalN-row, totalN-col)) - n);
@@ -1008,9 +1009,11 @@ public class Patterns {
                 }
 
             }
+            
             // space variables for right and left space
             startSpace = startSpace + 1;
             endSpace = endSpace - 1;
+            
             System.out.println();
 
         }
