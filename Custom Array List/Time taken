@@ -1,0 +1,25 @@
+    java.util.ArrayList<Integer> orignal = new java.util.ArrayList<>();
+        ArrayList<Integer> custom = new ArrayList<>();
+
+
+        for (int i = 0; i < 10000; i++) {
+            custom.add(new Integer(i));
+        }
+        
+        final long customStartTime = System.nanoTime();
+        custom.get(9999);
+        final long customEndTime = System.nanoTime();
+
+
+        for (int i = 0; i < 10000; i++) {
+            orignal.add(new Integer(i));
+        }
+        
+        final long orignalStartTime = System.nanoTime();
+        orignal.get(9999);
+        final long orignalEndTime = System.nanoTime();
+
+
+        final long customTime = customEndTime - customStartTime;
+        final long orignalTime = orignalEndTime - orignalStartTime;
+        System.out.println(customTime +" "+ orignalTime);
