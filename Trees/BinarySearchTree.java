@@ -3,9 +3,15 @@ import DSA.Algorithms.Trees.Node;
 
 public class BST {
     private Node root;
+    private List leafNodes;
     
     public BST(){
         this.root = null;
+        this.leafNodes = new ArrayList();
+    }
+    
+     public List leafNodes(){
+       return this.leafNode(this.root);
     }
 
     public boolean isBST(){
@@ -34,8 +40,27 @@ public class BST {
          }
          return bool;
     }
-
-
+    
+    
+    
+// it return the complete list of leaf nodes of Binary Search Tree
+private List leafNode(Node node){
+        if (node != null) {
+            if (node.left != null){
+                this.leafNode(node.left);
+            }
+            if(node.right != null){
+                this.leafNode(node.right);
+            }
+            if(node.left == null && node.right == null) {
+               this.leafNodes.add(node.getData());
+            }
+        }
+        else {
+            System.out.println(new NullPointerException().getMessage());
+        }
+        return this.leafNodes;
+    }
 
 
 
