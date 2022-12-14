@@ -19,6 +19,10 @@ public class BST {
         return heightOfTree(this.root);
     }
     
+    public int depth(int data){
+        return depthOfNode(data);
+    }
+    
      public List leafNodes(){
        return this.leafNode(this.root);
     }
@@ -71,6 +75,30 @@ private List leafNode(Node node){
         return this.leafNodes;
     }
     
+    
+    private int depthOfNode(int data){
+        int depOfNode = 0;
+        boolean flag = false;
+
+        if (this.contains(data)) {
+            Node node = this.root;
+
+            while(!flag){
+                if (node.getData() == data) {
+                    flag = true;
+                }
+                else if(node.getData() > data && node.left != null){
+                    node = node.left;
+                    depOfNode++;
+                }
+                else if(node.getData() < data && node.right != null){
+                    node = node.right;
+                    depOfNode++;
+                }
+            }
+        }
+        return depOfNode;
+    }
     
 
  private int heightOfTree(Node node){
