@@ -2,12 +2,21 @@ package DSA.Algorithms.Trees;
 import DSA.Algorithms.Trees.Node;
 
 public class BST {
-    private Node root;
-    private List leafNodes;
+    
+     private Node root;
+     private List leafNodes;
+    private int heightOfTree;
+     private int max;
     
     public BST(){
         this.root = null;
         this.leafNodes = new ArrayList();
+        this.heightOfTree = 0;
+        this.max = 0;
+    }
+    
+     public int height(){
+        return heightOfTree(this.root);
     }
     
      public List leafNodes(){
@@ -61,9 +70,34 @@ private List leafNode(Node node){
         }
         return this.leafNodes;
     }
+    
+    
 
+ private int heightOfTree(Node node){
+        if (node != null) {
+            if (node.left != null){
+                this.max++;
+                this.heightOfTree(node.left);
+                this.max--;
+            }
+            if(node.right != null){
+                this.max++;
+                this.heightOfTree(node.right);
+                this.max--;
 
+            }
+            if(node.left == null && node.right == null) {
+                this.heightOfTree = Math.max(this.heightOfTree, this.max);
+            }
+        }
+        else {
+            System.out.println(new NullPointerException().getMessage());
+        }
+        return this.heightOfTree;
+    }
 
+    
+    
 
     private void posTraversal(Node root, Node left, Node right) {
         // Left, Right, Root
