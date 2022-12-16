@@ -3,7 +3,7 @@ package DSA.Algorithms.Bitwise;
 import java.util.*;
 
 
-public class Main {
+public class BitwiseOperator {
 
     public static void main(String[] args) {
    
