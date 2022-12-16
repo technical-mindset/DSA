@@ -12,7 +12,6 @@ public class BitwiseOperator {
         
         setBIT(1, 3);
    
-   
         }
     
     
