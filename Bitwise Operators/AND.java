@@ -15,6 +15,8 @@ public class Main {
    
         }
     
+    
+   
      // Q1.) Find the given number is Odd or Even ?
     
       public static void oddEven(int n){
