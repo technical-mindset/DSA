@@ -11,6 +11,7 @@ public class BitwiseOperator {
         oddEven(sc.nextInt());
         
         setBIT(1, 3);
+        resetBIT(5, 22); // 22 = 10110 and the output becomes: 00110 = 6
    
         }
     
@@ -35,6 +36,21 @@ public class BitwiseOperator {
 
         if (i > 0) {
             System.out.println(n & (1 << (i - 1)));
+        }
+        else {
+            throw new RuntimeException("Left shift cant apply at: " + i + " position");
+        }
+    }
+    
+    
+    
+    // Q3.) Reset the i-th bit of n
+    public static void resetBIT(int i, int n){
+        // taking '1' and apply left shift with i - 1;
+
+        if (i > 0) {
+             // using ~ for 1's complement of a number
+            System.out.println(n & ~(1 << (i - 1)));
         }
         else {
             throw new RuntimeException("Left shift cant apply at: " + i + " position");
