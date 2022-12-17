@@ -11,6 +11,7 @@ public class BitwiseOperator {
         oddEven(sc.nextInt());
         
         setBIT(1, 3);
+        
         resetBIT(5, 22); // 22 = 10110 and the output becomes: 00110 = 6
    
         }
