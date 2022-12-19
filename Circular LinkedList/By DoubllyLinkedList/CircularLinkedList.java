@@ -3,6 +3,7 @@ package DSA.Algorithms;
 public class CircularDoubly {
     Nodes head;
     private int size;
+    
     CircularDoubly(){
         // -1 for empty list
         this.size = -1;
