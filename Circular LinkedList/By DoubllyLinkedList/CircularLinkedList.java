@@ -52,6 +52,7 @@ public class CircularDoubly {
         }
     }
     public void insertAt(int pos, int data){
+        
         if(this.head != null && (pos == 0 || pos == 1)){
           this.insert(data);
         }
