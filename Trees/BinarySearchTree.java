@@ -5,7 +5,7 @@ public class BST {
     
      private Node root;
      private List leafNodes;
-    private int heightOfTree;
+     private int heightOfTree;
      private int max;
     
     public BST(){
@@ -225,6 +225,8 @@ private List leafNode(Node node){
             }
             return bool;
         }
+    
+    
         public void add(int data){
             Node newNode = new Node(data);
             if(this.root == null){
@@ -253,6 +255,8 @@ private List leafNode(Node node){
                 }
             }
         }
+    
+    
         public void traversal(){
             if(this.root == null) throw new NullPointerException("Node is empty");
             else {
