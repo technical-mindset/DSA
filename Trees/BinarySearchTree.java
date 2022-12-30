@@ -54,6 +54,42 @@ public class BST {
          return bool;
     }
     
+    //  it deletes only the leaf node
+    public void deleteLeaf(int data) {
+        Node node = this.root;
+        boolean bool = false;
+
+        if(node.getData() == data){
+            this.root = null;
+        }
+        else if(node != null && this.contains(data)){
+
+            while (!bool){
+                if ((node.left != null) && (node.left.getData() == data) && (node.left.right == null && node.left.left == null)){
+                    node.left = null;
+                    bool = true;
+                }
+               else if ((node.right != null) && (node.right.getData() == data) && (node.right.right == null && node.right.left == null)){
+                    node.right = null;
+                    bool = true;
+                }
+               else if(node.left != null && node.getData() > data){
+                    node = node.left;
+                }
+               else if(node.right != null && node.getData() < data){
+                    node = node.right;
+                }
+               else{
+                    System.out.println("Provided node is not a leaf node");
+                    bool = true;
+                }
+            }
+        }
+        else {
+            System.out.println("Doesn't have this node");
+        }
+    }
+
     
     
 // it return the complete list of leaf nodes of Binary Search Tree
