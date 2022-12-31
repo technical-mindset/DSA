@@ -111,7 +111,7 @@ private List leafNode(Node node){
         return this.leafNodes;
     }
     
-    
+    // through this function find depth from root to any node
     private int depthOfNode(int data){
         int depOfNode = 0;
         boolean flag = false;
