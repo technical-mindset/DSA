@@ -136,7 +136,7 @@ private List leafNode(Node node){
         return depOfNode;
     }
     
-
+// it finds the height of tree 
  private int heightOfTree(Node node){
         if (node != null) {
             if (node.left != null){
