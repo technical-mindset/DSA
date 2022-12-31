@@ -8,7 +8,6 @@ public class BST {
      private int heightOfTree;
      private int max;
     
-    
     public BST(){
         this.root = null;
         this.leafNodes = new ArrayList();
