@@ -192,19 +192,7 @@ public class BST {
     }
     
     
-    // working........
-    private boolean deleteNode(Node node, int data){
-   boolean deleted = false;
-   Node root = node;
-    if (root != null) {
-        if (root.left != null){
-            if(root.left.getData() != data){
-            root = root.left;
-            }
-        }
-    }
-        return deleted;
-}
+
 
     
     
