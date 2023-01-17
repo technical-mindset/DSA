@@ -192,6 +192,24 @@ public class BST {
     }
     
     
+    
+    // it find the in order predecesor
+    private Node inOrderPre(Node node, Node root){
+        Node iPre = node;
+
+        if(node.left != null){
+
+           iPre = this.inOrderPre(node.left, root);
+
+        }
+
+        else if(node.right != null){
+
+            iPre = this.inOrderPre(node.right, root);
+        }
+
+        return iPre;
+    }
 
 
     
@@ -239,35 +257,8 @@ private List leafNode(Node node){
         }
         return depOfNode;
     }
+ 
     
-    // finding the predecessor
-    private Node inOrderPre(Node node, Node root){
-        Node iPre = node;
-
-        if(node.left != null){
-
-           iPre = this.inOrderPre(node.left, root);
-
-            int temp = node.getData();
-            node.setData(iPre.getData());
-            iPre.setData(temp);
-            iPre = node;
-
-        }
-
-        else if(node.right != null){
-
-            iPre = this.inOrderPre(node.right, root);
-
-            int temp = node.getData();
-            node.setData(iPre.getData());
-            iPre.setData(temp);
-            iPre = node;
-
-        }
-
-        return iPre;
-    }
     
     
 // it finds the height of tree 
