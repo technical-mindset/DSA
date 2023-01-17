@@ -54,6 +54,66 @@ public class BST {
          return bool;
     }
     
+    
+    // it find and sets the targeted node to be deleted 
+        private void prevNode(Node root, Node left, Node right, int data) {
+        if (this.contains(data)){
+
+            if (left != null && left.getData() == data){
+                System.out.println("left");
+
+                // if the targeted node have only right child
+                if (left.right != null && left.left == null) {
+                    // right child becomes root left child
+                    root.left = left.right;
+                }
+                // if the targeted node have only left child
+                else if (left.right == null && left.left != null){
+                    // left child becomes root left child
+                    root.left = left.left;
+                }
+                // if left.right of left child null
+                else if (left.left != null && left.left.right == null){
+                    // left.left becomes root's left
+                    root.left = left.left;
+                }
+                else if (left.right == null && left.left == null) {
+                    root.left = null;
+                }
+            }
+            else if (right != null && right.getData() == data){
+//                System.out.println("Right: "+ right.right.getData());
+                if (right.right != null && right.left == null) {
+//                    System.out.println("Right Right");
+                    root.right = right.right;
+                }
+                else if (right.right == null && right.left != null) {
+//                    System.out.println("Right Left");
+                    root.right = right.left;
+                }
+                else if (right.right != null && right.right.left == null) {
+//                    System.out.println("Right Right");
+                    root.right = right.right;
+                }
+                else if (right.right == null && right.left == null) {
+//                    System.out.println("Null");
+                    root.right = null;
+                }
+
+            }
+            else if (root != null && root.getData() > data){
+                System.out.println("Root");
+
+                this.prevNode(left, left.left, left.right, data);
+            }
+            else if (root != null && root.getData() < data){
+                this.prevNode(right, right.left, right.right, data);
+            }
+
+        }
+    }
+
+    
     //  it deletes only the leaf node
     public void deleteLeaf(int data) {
         Node node = this.root;
