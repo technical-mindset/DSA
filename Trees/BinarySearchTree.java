@@ -55,6 +55,47 @@ public class BST {
     }
     
     
+    
+    
+  // the function just find the replaced node(target to be deleted) and remove it  
+    private boolean deleteNode(Node node,Node left, Node right, int data){
+        boolean isDeleted = false;
+    
+        if (left != null && left.getData() == data){
+            
+            if (left.left == null && left.right == null) {
+                node.left = null;
+                isDeleted = true;
+            }
+            else{
+                System.out.println("Implement the logic for recovery");
+            }
+        }
+        else if (right != null && right.getData() == data){
+            
+            if (right.right == null && right.left == null) {
+                node.right = null;
+                isDeleted = true;
+            }
+            else{
+                System.out.println("Implement the logic for recovery");
+            }
+        }
+        if(node != null && node.left != null){
+            
+            this.deleteNode(left, left.left, left.right, data);
+        }
+        if(node != null && node.right != null){
+            this.deleteNode(right, right.left, right.right, data);
+        }
+        return isDeleted;
+}
+
+    
+    
+    
+    
+    
     // it find and sets the targeted node to be deleted 
         private void prevNode(Node root, Node left, Node right, int data) {
         if (this.contains(data)){
