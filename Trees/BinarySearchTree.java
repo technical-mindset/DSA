@@ -30,6 +30,11 @@ public class BST {
     public boolean isBST(){
         return check_BST(this.root, this.root.left, this.root.right);
     }
+    
+    public void del(int data){
+       this.swapNodes(this.root, this.root.left, this.root.right, data);
+    }
+    
 
     // its check whether the is Binary Search Tree or not
     private boolean check_BST(Node root, Node left, Node right) {
