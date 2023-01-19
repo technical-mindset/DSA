@@ -60,6 +60,77 @@ public class BST {
     }
     
     
+    // adjust the new and old nodes and their childs and deleting the targeted node
+        private void swapNodes(Node root, Node left, Node right, int data) {
+        if (this.contains(data)){
+
+        if(left != null && root.getData() > data){
+            Node node = root.left;
+//            System.out.println(node.getData());
+            swapNodes(node, node.left, node.right, data);
+
+        }
+        if(right != null && root.getData() < data){
+            Node node = root.right;
+//            System.out.println(node.getData());
+            swapNodes(node, node.left, node.right, data);
+        }
+        if (root != null && root.getData() == data){
+            
+            // left is null and right in not null pass to prevNode
+            if(root.left == null && root.right != null){
+//                System.out.println(root.getData());
+                this.prevNode(this.root, this.root.left, this.root.right, data);
+            }
+            
+             // right is null and left isn't, so pass to prevNode
+            else if(root.left != null && root.right == null){
+//                System.out.println(root.getData());
+                this.prevNode(this.root, this.root.left, this.root.right, data);
+            }
+            
+            // when both child is null
+            else if (root.left == null && root.right == null){
+                long sTime = System.nanoTime();
+                this.prevNode(this.root,this.root.left, this.root.right, data);
+                long eTime = System.nanoTime();
+                System.out.println("Deletion of node:" +root+ ", data:" +root.getData()+ " performed in:" +(((eTime - sTime) / 1000000)+0.1)+ " sec");
+            }
+            
+            // when both is not null
+            else if (root.left != null && root.right != null){
+                
+                if (root.right.left == null && root.right.right != null){
+                    // pass to the prevNode for adjustment of nodes and deletion
+                    this.prevNode(this.root, this.root.left, this.root.right, data);
+                    
+//                  current root node's left becomes the left of new root node 
+                    right.left = root.left;
+                }
+                // same process for right child
+                else if (root.left.right == null && root.left.left != null) {
+                    this.prevNode(this.root, this.root.left, this.root.right, data);
+//                    System.out.println(right.getData());
+                    right.right = root.right;
+
+                }
+                // for finding the in order predecessor 
+                else {
+                    Node inOrPre = inOrderPre(root.right, root);
+                    int temp = root.getData();
+                    root.setData(inOrPre.getData());
+                    inOrPre.setData(temp);
+                    
+                this.deleteNode(this.root, this.root.left, this.root.right, data);
+                }
+             }
+           }
+        }
+    }
+
+
+    
+    
     
     
   // the function just find the replaced node(target to be deleted) and remove it  
