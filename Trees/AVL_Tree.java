@@ -5,9 +5,11 @@ public class AVLTree {
   public AVLTree(){
      this.root = null;
  }
+ 
  public void insertion(int data){
    this.root = this.insertion(data, this.root);
  }
+ 
 private AVL_Node insertion(int data, AVL_Node root){
       // base-case: when the node is null then the creation of new Node and return
       if(root == null) {
@@ -27,6 +29,17 @@ private AVL_Node insertion(int data, AVL_Node root){
 
 
 }
+ 
+ 
+ // -------- small functions ---------
+ private int height(AVL_Node node){
+    if (node == null){
+        return 0;
+    }
+      return node.height;
+}
+ 
+ 
 class AVL_Node{
     AVL_Node left;
     AVL_Node right;
