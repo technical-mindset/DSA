@@ -32,12 +32,21 @@ private AVL_Node insertion(int data, AVL_Node root){
  
  
  // -------- small functions ---------
+ 
+ private int balFactor(AVL_Node node){
+    if (node == null) {
+        return 0;
+    }
+    return height(node.left) - height(node.right);
+}
+ 
  private int height(AVL_Node node){
     if (node == null){
         return 0;
     }
-      return node.height;
+      return node.getHeight;
 }
+ 
  
  
 class AVL_Node{
