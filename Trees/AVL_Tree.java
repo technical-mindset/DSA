@@ -10,6 +10,10 @@ public class AVLTree {
    this.root = this.insertion(data, this.root);
  }
  
+ public void deletion(int data){
+   this.root = this.deletion(data, this.root);
+ }
+ 
  // insertion and deletion methods
  
 private AVL_Node insertion(int data, AVL_Node root){
