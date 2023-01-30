@@ -10,6 +10,8 @@ public class AVLTree {
    this.root = this.insertion(data, this.root);
  }
  
+ // insertion and deletion methods
+ 
 private AVL_Node insertion(int data, AVL_Node root){
       // base-case: when the node is null then the creation of new Node and return
       if(root == null) {
@@ -48,6 +50,68 @@ private AVL_Node insertion(int data, AVL_Node root){
 
        return root;
 }
+ 
+ private AVL_Node deletion(int data, AVL_Node root){
+    if (root == null) {
+        return root;
+    }
+    else if (root.getData() < data) {
+        root.right = this.deletion(data, root.right);
+    }
+    else if (root.getData() > data) {
+        root.left = this.deletion(data, root.left);
+    }
+    else{
+        if (root.left == null || root.right == null){
+
+            AVL_Node node;
+            if (root.left == null) {
+                node = root.right;
+            }
+            else {
+                node = root.left;
+            }
+            if (node == null) {
+                node = root;
+                root = null;
+            }
+            else {
+                root = node;
+            }
+        }
+        else{
+            AVL_Node node = this.inOrderSucc(root.right);
+            root.setData(node.getData());
+            root.right = this.deletion(node.getData(), root.right);
+        }
+    }
+    if (root == null)
+        return root;
+
+    root.setHeight(Math.max(this.height(root.left),this.height(root.right)) + 1);
+    int balFac = this.balFactor(root);
+    // LL case
+    if (balFac > 1 && root.left.getData() > data){
+        return rightRotate(root);
+    }
+    // RR-Case
+    if (balFac < -1 && root.right.getData() < data){
+        return leftRotate(root);
+    }
+    // LR-Case
+    if (balFac > 1 && root.left != null && root.left.getData() > data){
+        root.left = leftRotate(root.left);
+        return rightRotate(root);
+    }
+    // LR-Case
+    if (balFac < -1 && root.left != null && root.left.getData() < data){
+        root.right = rightRotate(root.right);
+        return leftRotate(root);
+    }
+
+      return root;
+}
+
  
  // ------------ Rotation methods -------
  
