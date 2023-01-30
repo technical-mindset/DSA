@@ -25,9 +25,28 @@ private AVL_Node insertion(int data, AVL_Node root){
 
       // set height after each insertion
       root.setHeight(Math.max(this.height(root.left),this.height(root.right)) + 1);
-      return root;
+      int balFac = this.balFactor(root);
+      // LL case
+       if (balFac > 1 && root.left.getData() > data){
+           return rightRotate(root);
+       }
+       // RR-Case
+       if (balFac < -1 && root.right.getData() < data){
+           return leftRotate(root);
+       }
+       // LR-Case
+       if (balFac > 1 && root.left.getData() > data){
+           root.left = leftRotate(root.left);
+           return rightRotate(root);
+       }
+       // LR-Case
+       if (balFac < -1 && root.left.getData() < data){
+           root.right = rightRotate(root.right);
+           return leftRotate(root);
+       }
 
 
+       return root;
 }
  
  // ------------ Rotation methods -------
