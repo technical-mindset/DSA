@@ -196,9 +196,17 @@ private AVL_Node leftRotate(AVL_Node root){
     }
       return node.getHeight;
 }
+ // In Order Successor Function
+  private AVL_Node inOrderSucc(AVL_Node root){
+    AVL_Node node = root;
+    while(node.left != null){
+        node = node.left;
+    }
+    return node;
+ }
  
  
- 
+ //  -------- Node class of AVL Tree   ---------
 class AVL_Node{
     AVL_Node left;
     AVL_Node right;
