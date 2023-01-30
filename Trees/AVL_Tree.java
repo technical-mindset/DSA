@@ -32,6 +32,41 @@ private AVL_Node insertion(int data, AVL_Node root){
  
  // ------------ Rotation methods -------
  
+ 
+/*  LL-Case:
+* Before Rotation
+          root(c)
+          /   \
+         b     a
+        / \
+       d   E
+      / \
+     F   G
+
+* After Rotation
+          root(b)
+           /   \
+          d     c
+         / \   / \
+        F   G E   a
+
+ */
+private AVL_Node rightRotate(AVL_Node root){
+
+    // rotation
+    AVL_Node b = root.left;
+    AVL_Node E = b.right;
+    b.right = root;
+    root.left = E;
+
+    // updating the height
+    root.height = Math.max(height(root.left),height(root.right)) + 1;
+    b.height = Math.max(height(b.left),height(b.right)) + 1;
+    return b; // becoming the new root node
+
+}
+ 
+ 
  /*    RR-Case: Before rotation:
         root(c)
         /  \
