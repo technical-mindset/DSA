@@ -168,9 +168,44 @@ public class BST {
 }
 
     
-    
-    
-    
+  private Node deletion(int data, Node root){
+    if (root == null) {
+        return root;
+    }
+    else if (root.getData() < data) {
+        root.right = this.deletion(data, root.right);
+    }
+    else if (root.getData() > data) {
+        root.left = this.deletion(data, root.left);
+    }
+    else{
+        if (root.left == null || root.right == null){
+
+            Node node;
+            if (root.left == null) {
+                node = root.right;
+            }
+            else {
+                node = root.left;
+            }
+            if (node == null) {
+                node = root;
+                root = null;
+            }
+            else {
+                root = node;
+            }
+        }
+        else{
+            Node node = this.inOrderSucc(root.right);
+            root.setData(node.getData());
+            root.right = this.deletion(node.getData(), root.right);
+        }
+    }
+    if (root == null)
+        return root;
+     }
+}
     
     // it find and sets the targeted node to be deleted 
         private void prevNode(Node root, Node left, Node right, int data) {
