@@ -166,6 +166,15 @@ public class BST {
         }
         return isDeleted;
 }
+  
+    // In Order Successor Function
+  private Node inOrderSucc(Node root){
+    Node node = root;
+    while(node.left != null){
+        node = node.left;
+    }
+    return node;
+ }
 
     
   private Node deletion(int data, Node root){
