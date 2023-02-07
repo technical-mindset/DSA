@@ -2,6 +2,8 @@ package DSA.Algorithms.Trees;
 
 public class AVLTree {
  private AVL_Node root;
+ 
+ // Constructor
   public AVLTree(){
      this.root = null;
  }
