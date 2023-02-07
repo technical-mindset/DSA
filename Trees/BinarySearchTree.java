@@ -15,6 +15,7 @@ public class BST {
         this.max = 0;
     }
     
+    
      public int height(){
         return heightOfTree(this.root);
     }
