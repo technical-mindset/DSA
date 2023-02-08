@@ -182,8 +182,6 @@ public class Patterns {
     }
 
 
-
-
     /* Pattern 8
 
      *********
