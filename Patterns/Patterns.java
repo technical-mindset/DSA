@@ -270,7 +270,6 @@ public class Patterns {
     }
 
 
-
     /* Pattern 11
 
      *******
