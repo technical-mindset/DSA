@@ -64,7 +64,7 @@ public class Patterns {
         }
     }
     
-    
+   
     /* Pattern 4
 
      *
