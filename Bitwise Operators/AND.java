@@ -17,6 +17,7 @@ public class BitwiseOperator {
         }
     
     
+    
    
      // Q1.) Find the given number is Odd or Even ?
     
