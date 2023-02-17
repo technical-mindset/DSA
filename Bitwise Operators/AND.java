@@ -9,7 +9,7 @@ public class BitwiseOperator {
    
         Scanner sc = new Scanner(System.in);
         oddEven(sc.nextInt());
-        
+  
         setBIT(1, 3); // 
         
         resetBIT(5, 22); // 22 = 10110 and the output becomes: 00110 = 6
