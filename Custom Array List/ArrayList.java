@@ -6,7 +6,9 @@ public class  ArrayList<T> {
     ArrayList(){
         this.elements = null;
     }
+  
     public void add(T data){
+      
         this.size++;
         T[] newArray;
         T[] oldArray;
