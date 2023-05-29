@@ -33,6 +33,7 @@ public class CircularDoubly {
             node.next = new_node;
         }
     }
+    
     public void insert(int data){
         Nodes new_node = new Nodes(data);
 
