@@ -8,6 +8,8 @@ public class CircularDoubly {
         // -1 for empty list
         this.size = -1;
     }
+    
+   
     public void append(int data){
         Nodes node = this.head;
         Nodes new_node = new Nodes(data);
